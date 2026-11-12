@@ -1,0 +1,19 @@
+{
+  "kind": "marinara.personal-extension",
+  "version": 1,
+  "config": {
+    "name": "Char Avatar Dropper",
+    "version": "0.1.0",
+    "description": "Adds a \"Pick colors from avatar\" button to the character and persona Colors tab. Opens the avatar large with zoom and a loupe, and lets you eyedrop the name, dialogue and message box colors (hair, eyes, outfit) instead of the skin tone the built-in extract tends to pick. Also suggests swatches with skin tones listed last.",
+    "runtime": "client",
+    "capabilities": [
+      "full_page_access"
+    ],
+    "jsPath": [
+      "src/core.js",
+      "src/bridge.js",
+      "src/ui.js"
+    ],
+    "cssPath": "extension.css"
+  }
+}

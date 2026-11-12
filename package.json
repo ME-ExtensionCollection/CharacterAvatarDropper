@@ -1,0 +1,17 @@
+{
+  "name": "marinara-char-avatar-dropper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Marinara Engine extension: eyedrop a character's name, dialogue and message box colors from their avatar.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/build.mjs --check && node --test test/*.test.mjs",
+    "dev": "node scripts/serve.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  }
+}

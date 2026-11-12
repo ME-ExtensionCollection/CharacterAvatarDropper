@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Char Avatar Dropper dev harness</title>
+    <link rel="icon" href="data:," />
+    <style>
+      /* A small subset of Marinara's dark theme tokens (packages/client/src/styles/globals.css). */
+      :root {
+        --background: #050312;
+        --foreground: #d4d4d4;
+        --card: #141414d9;
+        --primary: #ec4b97;
+        --primary-foreground: #ffffff;
+        --secondary: #1a1a2e;
+        --muted-foreground: #a1a1aa;
+        --destructive: #ff6b9d;
+        --border: color-mix(in srgb, var(--primary) 20%, transparent);
+        --radius: 0.75rem;
+        color-scheme: dark;
+      }
+      body { margin: 0; padding: 2rem; background: var(--background); color: var(--foreground); font-family: system-ui, sans-serif; }
+      main { max-width: 26rem; }
+      /* Stand-ins for the Tailwind classes CardColors uses. */
+      .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem; }
+      .flex { display: flex; }
+      .w-full { width: 100%; }
+      .rounded-xl { border-radius: 0.75rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+      .text-xs { font-size: 0.75rem; }
+      .mari-editor-action { align-items: center; justify-content: center; gap: 0.5rem; border: 1px solid var(--border); background: var(--secondary); color: var(--foreground); cursor: pointer; }
+      .mari-editor-action--accent { background: color-mix(in srgb, var(--primary) 25%, var(--secondary)); }
+      .mock-preview { display: flex; gap: 0.75rem; padding: 1rem; border: 1px solid var(--border); border-radius: 0.75rem; background: rgb(0 0 0 / 0.3); }
+      .mock-preview img { width: 2.5rem; height: 2.5rem; border-radius: 999px; object-fit: cover; }
+      .mock-box { margin-top: 0.25rem; padding: 0.75rem 1rem; border-radius: 1rem; font-size: 0.8125rem; }
+      .mock-values { font: 0.75rem/1.6 ui-monospace, monospace; white-space: pre-wrap; }
+      .mock-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.8rem; }
+    </style>
+    <link rel="stylesheet" href="/dev/build/extension.css" />
+  </head>
+  <body>
+    <main>
+      <h1 style="font-size: 1rem">Char Avatar Dropper harness: Alice (mock Colors tab)</h1>
+      <div class="mock-controls">
+        <label>Avatar <input id="mock-file" type="file" accept="image/*" /></label>
+        <button id="mock-default" type="button">Test avatar</button>
+        <button id="mock-external" type="button">Other-site avatar</button>
+        <button id="mock-none" type="button">No avatar</button>
+        <button id="mock-persona" type="button">Toggle persona</button>
+      </div>
+      <div id="mock-tab"></div>
+    </main>
+    <script src="/dev/mock-marinara.js"></script>
+    <script src="/dev/build/page-runtime.js"></script>
+  </body>
+</html>
